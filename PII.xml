@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<catalog>
+    <product id="p101">
+        <productName>1</productName>
+        <sku>1</sku>
+        <manufacturer>1</manufacturer>
+        <category>1</category>
+        <unitprice>1</unitprice>
+        <quantityInStock>1</quantityInStock>
+        <reorderPoint>1</reorderPoint>
+        <supplier>1</supplier>
+        <dateRecieved>1</dateRecieved>
+        <shelfLocation>1</shelfLocation>
+        <productStatus>1</productStatus>
+    </product>
+    <product id="p102">
+        <productName>2</productName>
+        <sku>2</sku>
+        <manufacturer>2</manufacturer>
+        <category>2</category>
+        <unitprice>2</unitprice>
+        <quantityInStock>2</quantityInStock>
+        <reorderPoint>2</reorderPoint>
+        <supplier>2</supplier>
+        <dateRecieved>2</dateRecieved>
+        <shelfLocation>2</shelfLocation>
+        <productStatus>2</productStatus>
+    </product>
+    <product id="p103">
+        <productName>3</productName>
+        <sku>3</sku>
+        <manufacturer>3</manufacturer>
+        <category>3</category>
+        <unitprice>3</unitprice>
+        <quantityInStock>3</quantityInStock>
+        <reorderPoint>3</reorderPoint>
+        <supplier>3</supplier>
+        <dateRecieved>3</dateRecieved>
+        <shelfLocation>3</shelfLocation>
+        <productStatus>3</productStatus>
+    </product>
+    <product id="p104">
+        <productName>4</productName>
+        <sku>4</sku>
+        <manufacturer>4</manufacturer>
+        <category>4</category>
+        <unitprice>4</unitprice>
+        <quantityInStock>4</quantityInStock>
+        <reorderPoint>4</reorderPoint>
+        <supplier>4</supplier>
+        <dateRecieved>4</dateRecieved>
+        <shelfLocation>4</shelfLocation>
+        <productStatus>4</productStatus>
+    </product>
+    <product id="p105">
+        <productName>5</productName>
+        <sku>5</sku>
+        <manufacturer>5</manufacturer>
+        <category>5</category>
+        <unitprice>5</unitprice>
+        <quantityInStock>5</quantityInStock>
+        <reorderPoint>5</reorderPoint>
+        <supplier>5</supplier>
+        <dateRecieved>5</dateRecieved>
+        <shelfLocation>5</shelfLocation>
+        <productStatus>5</productStatus>
+    </product>
+</catalog>

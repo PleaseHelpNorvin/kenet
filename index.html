@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody id="content">
+            
+        </tbody>
+    </table>  
+      
+</body>
+</html>
+<script>
+    // let display = document.getElementById ("boo")
+    let content = document.getElementById("content");
+    var parser, xmlDoc;
+    var text = `
+        <bookstore>
+            <book>
+                <title>Every Italian</title>
+                <author>Giada De Laurentiis</author>
+                <year>2005</year>
+            </book>
+       
+
+       
+            <book>
+                <title>Every Italian</title>
+                <author>Giada De Laurentiis</author>
+                <year>2005</year>
+            </book>
+        </bookstore>`;
+
+        parser = new DOMParser();
+        xmlDoc = parser.parseFromString(text, "text/xml");
+        console.log(xmlDoc);
+
+        let display = xmlDoc.getElementsByTagName("book");
+        console.log(display);
+        let template = "";
+
+        for(let i=0; i < display.length; i++ ){
+            // console.log(display[1].children[i].textContent);
+            template += `
+            <tr>
+                <th>${display[i].children[0].textContent}</th>
+                <th>${display[i].children[1].textContent}</th>
+                <th>${display[i].children[2].textContent}</th>
+            </tr>
+
+            `;
+
+        }
+        content.innerHTML = template;
+        // document.getElementById("demo").innerHTML=
+        //  xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+</script>

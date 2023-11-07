@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <table border ="1">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Stuct keeping Unit</th>
+                <th>Manufacturer</th>
+                <th>Category</th>
+                <th>Unit Price</th>
+                <th>Quantity in Stock</th>
+                <th>Reorder's Point</th>
+                <th>Supplier</th>
+                <th>Date Recieved</th>
+                <th>Shelf Location</th>
+                <th>Product status</th>
+            </tr>
+        </thead>
+        <tbody id ="products1">
+            
+        </tbody> 
+    </table>
+    <button id="logoutButton">Log Out</button>
+</body>
+</html>
+<script>
+    const logoutButton = document.getElementById("logoutButton");
+    let xmlContent = '';
+    let tableproducts = document.getElementById('products1');
+    let productsData = [];
+    let template ="";
+
+
+    
+    fetch('PII.xml').then((response)=>{
+        response.text().then((xml)=>{
+            xmlContent = xml;
+            let parser = new DOMParser();
+            let xmlDOM = parser.parseFromString(xmlContent, 'application/xml');
+            let products1 = xmlDOM.querySelectorAll('product');
+            console.log(products1);
+            for(let i=0; i < products1.length; i++){
+                template +=`
+                    <tr>
+                        <td>${i+1}</td>
+                        <td>${products1[i].children[0].textContent}</td>
+                        <td>${products1[i].children[1].textContent}</td>
+                        <td>${products1[i].children[2].textContent}</td>
+                        <td>${products1[i].children[3].textContent}</td>
+                        <td>${products1[i].children[4].textContent}</td>
+                        <td>${products1[i].children[5].textContent}</td>
+                        <td>${products1[i].children[6].textContent}</td>
+                        <td>${products1[i].children[7].textContent}</td>
+                        <td>${products1[i].children[8].textContent}</td>
+                        <td>${products1[i].children[9].textContent}</td>
+                        <td>${products1[i].children[10].textContent}</td>
+                    </tr>
+                `;
+            }
+            tableproducts.innerHTML = template;
+        });
+      
+        });
+        logoutButton.addEventListener("click", function () {
+        sessionStorage.clear();
+        window.location.href = "login/index.html";
+    });
+    
+</script>

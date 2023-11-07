@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .active {
+            background-color: #007BFF; /* Change to your desired active item background color */
+        }
+        .profile-image {
+            width: 30px; /* Adjust the image size as needed */
+            height: 30px; /* Adjust the image size as needed */
+            border-radius: 50%;
+            margin-right: 10px; /* Add margin to separate the image from the button */
+        }
+    </style>
+</head>
+<body>
+
+<div class="topnav">
+    <div class="logo">Your Logo</div>
+    <div class="profile-dropdown">
+        <button id="profile-button" class="profile-button">
+            <img src="user-avatar.jpg"  class="profile-image"> User Name
+        </button>
+        <div id="profile-content" class="profile-content">
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="#">Log Out</a>
+        </div>
+    </div>
+</div>
+
+<div class="sidenav" id="mySidenav">
+    <ul class="side-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div>
+
+<div class="content">
+    <!-- Your main content goes here -->
+    <h1>Main Content</h1>
+</div>
+
+<script>
+    // JavaScript for adding an "active" class to the clicked list item
+    const sideMenuItems = document.querySelectorAll('.side-menu li');
+
+    sideMenuItems.forEach(item => {
+        item.addEventListener('click', function () {
+            // Remove the "active" class from all list items
+            sideMenuItems.forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Add the "active" class to the clicked list item
+            this.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
